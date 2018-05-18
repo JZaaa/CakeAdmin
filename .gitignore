@@ -3,8 +3,9 @@
 /config/app.php
 /config/.env
 /logs/*
-/tmp/*
+#/tmp/*
 /vendor/*
+composer.lock
 
 # OS generated files #
 ######################
