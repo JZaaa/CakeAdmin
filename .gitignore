@@ -2,8 +2,8 @@
 ##########################
 /config/app.php
 /config/.env
-#/logs/*
-#/tmp/*
+/logs/*
+/tmp/*
 /vendor/*
 composer.lock
 
