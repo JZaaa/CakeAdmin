@@ -7,14 +7,13 @@
  *
  */
 
-namespace Admin\Controller\Component;
+namespace App\Controller\Component;
 
 use Cake\Controller\Component;
 use Cake\Controller\Controller;
 use Cake\Core\Exception\Exception;
 use Cake\Event\Event;
 use Cake\Event\EventDispatcherTrait;
-use Cake\Http\ServerRequest;
 use Cake\ORM\Locator\LocatorAwareTrait;
 use Cake\Http\Response;
 
@@ -23,26 +22,27 @@ use Cake\Http\Response;
  *
  * 基本表:
  * CREATE TABLE `ad_auth_rules_bak` (
-        `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-        `parent_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '父级id',
-        `name` varchar(80) NOT NULL COMMENT '规则唯一标识',
-        `title` varchar(20) NOT NULL COMMENT '规则中文名称',
-        `condition` varchar(100) DEFAULT NULL COMMENT '规则表达式',
-        PRIMARY KEY (`id`),
-        UNIQUE KEY `name` (`name`)
-    ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='规则表'
+ *       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+ *       `parent_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '父级id',
+ *       `name` varchar(80) NOT NULL COMMENT '规则唯一标识',
+ *       `title` varchar(20) NOT NULL COMMENT '规则中文名称',
+ *       `condition` varchar(100) DEFAULT NULL COMMENT '规则表达式',
+ *       PRIMARY KEY (`id`),
+ *       UNIQUE KEY `name` (`name`)
+ *   ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='规则表'
  *
  *
  *   * 基础配置:
  *  authModel[必须]  string  指定验证规则表的 Model, plugin为 Plugin.Model
  *  fields[必须]  array
  *      ---         'keywords' => 'name',  验证规则方法字段名,输入规则为 plugin/controller/action
-        ---         'name' => 'title',     规则中文名字段名
-        ---         'extend' => 'condition'  拓展字段名[暂无实际功能]
+ *      ---         'name' => 'title',     规则中文名字段名
+ *      ---         'extend' => 'condition'  拓展字段名[暂无实际功能]
  *
  *  sessionKey[可选]  string  保存的session关键字, 默认为 AuthRules
  *  ids[必须]  array  获取规则的id数组集
  *  statusCode[可选]  int  无权限返回的header头, 默认为 405
+ *  enable[可选]  bool  是否开启校验,默认true
  *
  *  使用方法:
  *              $this->loadComponent('AuthRules', [
@@ -54,7 +54,8 @@ use Cake\Http\Response;
  *                   ],
  *                   'sessionKey' => 'Admin.AuthRules',
  *                   'ids' => [1,2,3], //此处请动态获取
- *                   'statusCode' => 405
+ *                   'statusCode' => 405,
+ *                   'enable' => true, //是否开启权限验证
  *               ]);
  *
  *
@@ -75,12 +76,13 @@ class AuthRulesComponent extends Component
      *  authModel[必须]  string  指定验证规则表的 Model, plugin为 Plugin.Model
      *  fields[必须]  array
      *      ---         'keywords' => 'name',  验证规则方法字段名,输入规则为 plugin/controller/action
-            ---         'name' => 'title',     规则中文名字段名
-            ---         'extend' => 'condition'  拓展字段名[暂无实际功能]
+     *      ---         'name' => 'title',     规则中文名字段名
+     *      ---         'extend' => 'condition'  拓展字段名[暂无实际功能]
      *
      *  sessionKey[可选]  string  保存的session关键字, 默认为 AuthRules
      *  ids[必须]  array  获取规则的id数组集
      *  statusCode[可选]  int  无权限返回的header头, 默认为 405
+     *  enable[可选]  bool  是否开启校验,默认true
      *
      * @var array
      */
@@ -89,7 +91,8 @@ class AuthRulesComponent extends Component
         'fields' => null,
         'sessionKey' => null,
         'ids' => [],
-        'statusCode' => null
+        'statusCode' => null,
+        'enable' => true
     ];
 
 
@@ -121,7 +124,7 @@ class AuthRulesComponent extends Component
      *
      * @var array
      */
-    public $allowedActions = ['login'];
+    public $allowedActions = [];
 
 
     /**
@@ -153,7 +156,8 @@ class AuthRulesComponent extends Component
             ],
             'sessionKey' => 'AuthRules',
             'ids' => [],
-            'statusCode' => 405
+            'statusCode' => 405,
+            'enable' => true
         ];
         $config = $this->getConfig();
 
@@ -177,6 +181,8 @@ class AuthRulesComponent extends Component
 
 
 
+
+
     /**
      * 写入规则数据
      */
@@ -192,6 +198,15 @@ class AuthRulesComponent extends Component
     protected function _readAuthRules()
     {
         return $this->session->read($this->_config['sessionKey']);
+    }
+
+    /**
+     * 删除规则数据
+     */
+
+    protected function _deleteAuthRules()
+    {
+        $this->session->delete($this->_config['sessionKey']);
     }
 
 
@@ -255,6 +270,9 @@ class AuthRulesComponent extends Component
      */
     public function check(Event $event)
     {
+        if ($this->_config['enable'] === false) {
+            return null;
+        }
         $controller = $event->getSubject();
 
         $action = strtolower($controller->getRequest()->getParam('action'));
@@ -302,7 +320,7 @@ class AuthRulesComponent extends Component
 
         $plugin = strtolower($request->getParam('plugin'));
 
-        if (!$plugin && $plugin !== null) {
+        if ($plugin !== false && $plugin !== null) {
             $route = $plugin . '/' . $route;
         }
 
@@ -407,6 +425,15 @@ class AuthRulesComponent extends Component
         }
 
         return $rules;
+    }
+
+
+    /**
+     * 删除rules 数据
+     */
+    public function destroy()
+    {
+        $this->_deleteAuthRules();
     }
 
     /**

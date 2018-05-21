@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v12.09 (64 bit)
-MySQL - 5.7.19 : Database - cakecms_2
+MySQL - 5.7.19 : Database - cakeadmin
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.7.19 : Database - cakecms_2
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`cakecms_2` /*!40100 DEFAULT CHARACTER SET utf8 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`cakeadmin` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
-USE `cakecms_2`;
+USE `cakeadmin`;
 
 /*Table structure for table `ad_arctypes` */
 
@@ -84,9 +84,11 @@ CREATE TABLE `ad_auth_rules` (
   `condition` varchar(100) DEFAULT NULL COMMENT '规则表达式',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='规则表';
 
 /*Data for the table `ad_auth_rules` */
+
+insert  into `ad_auth_rules`(`id`,`parent_id`,`name`,`title`,`condition`) values (1,0,'admin/articles/listPageMain','文章管理',NULL),(2,0,'admin/articles/onePageMain','单页管理',NULL),(3,1,'admin/articles/picPageManage','图片列表管理',NULL),(4,1,'admin/articles/listPageManage','文章列表关联',NULL),(5,2,'admin/articles/onePageManage','单页面内容管理',NULL),(6,1,'admin/articles/add','添加',NULL),(7,1,'admin/articles/delete','删除',NULL),(8,1,'admin/articles/edit','编辑',NULL),(9,0,'admin/arctypes/index','栏目管理',NULL),(10,9,'admin/arctypes/add','新增',NULL),(11,9,'admin/arctypes/edit','编辑',NULL),(12,9,'admin/arctypes/delete','删除',NULL),(13,0,'admin/roles/index','管理员组',NULL),(14,13,'admin/roles/add','新增',NULL),(15,13,'admin/roles/edit','编辑',NULL),(16,13,'admin/roles/delete','删除',NULL),(17,13,'admin/roles/manage','菜单权限管理',NULL),(18,0,'admin/users/index','用户管理',NULL),(19,18,'admin/users/add','添加',NULL),(20,18,'admin/users/edit','编辑',NULL),(21,18,'admin/users/delete','删除',NULL),(22,0,'admin/options/index','系统设置',NULL),(23,0,'admin/menus/index','菜单管理',NULL),(24,23,'admin/menus/add','新增',NULL),(25,23,'admin/menus/edit','编辑',NULL),(26,23,'admin/menus/delete','删除',NULL),(27,0,'admin/authRoles/index','权限管理',NULL),(28,27,'admin/authRoles/add','新增',NULL),(29,27,'admin/authRoles/edit','编辑',NULL),(30,27,'admin/authRoles/delete','删除',NULL);
 
 /*Table structure for table `ad_menus` */
 
@@ -138,6 +140,7 @@ CREATE TABLE `ad_roles` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '自增id',
   `name` varchar(50) DEFAULT NULL COMMENT '组别名称',
   `menus` text COMMENT '菜单权限',
+  `rules` text,
   `note` varchar(100) DEFAULT NULL COMMENT '备注',
   `sort` int(11) DEFAULT '0' COMMENT '排序id',
   PRIMARY KEY (`id`)
@@ -145,7 +148,7 @@ CREATE TABLE `ad_roles` (
 
 /*Data for the table `ad_roles` */
 
-insert  into `ad_roles`(`id`,`name`,`menus`,`note`,`sort`) values (1,'管理员组','[\"7\",\"8\",\"12\",\"11\",\"9\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"13\"]','',2);
+insert  into `ad_roles`(`id`,`name`,`menus`,`rules`,`note`,`sort`) values (1,'管理员组','[\"7\",\"8\",\"12\",\"11\",\"9\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"13\"]','[\"1\",\"3\",\"4\",\"6\",\"7\",\"8\",\"2\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\",\"17\",\"18\",\"19\",\"20\",\"21\",\"22\",\"23\",\"24\",\"25\",\"26\",\"27\",\"28\",\"29\",\"30\"]','',2);
 
 /*Table structure for table `ad_users` */
 

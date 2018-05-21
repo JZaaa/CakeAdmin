@@ -19,6 +19,7 @@ class UsersController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['relogin']);
+        $this->AuthRules->allow(['login', 'relogin', 'logout']);
     }
 
 
@@ -32,6 +33,14 @@ class UsersController extends AppController
                 $tip = '用户名或密码错误';
                 $user = $this->Auth->identify();
                 if ($user && $user['state'] == 1) {
+                    $rules = $this->Users->Roles->find()
+                        ->select([
+                            'Roles.id', 'Roles.rules'
+                        ])
+                        ->where([
+                            'Roles.id' => $user['role_id']
+                        ])->first();
+                    $user['rules'] = (empty($rules['rules'])) ? [] : json_decode($rules['rules']);;
                     $this->Auth->setUser($user);
                     return $this->redirect($this->Auth->redirectUrl());
                 }
@@ -55,6 +64,7 @@ class UsersController extends AppController
      */
     public function logout()
     {
+        $this->AuthRules->destroy();
         return $this->redirect($this->Auth->logout());
     }
 

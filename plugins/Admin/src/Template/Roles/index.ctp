@@ -33,7 +33,8 @@
                     <td>
                         <a href="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Roles', 'action' => 'edit', $item->id]);?>" class="btn btn-blue" data-toggle="dialog" data-width="600" data-height="350" data-id="dialog-mask" data-mask="true">编辑</a>&nbsp;
                         <a href="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Roles', 'action' => 'delete', $item->id]);?>" class="btn btn-red" data-toggle="doajax" data-confirm-msg="确定要删除该行信息吗">删除</a>&nbsp;
-                        <a href="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Roles', 'action' => 'manage', $item->id]);?>" class="btn btn-orange" data-toggle="dialog" data-width="600" data-height="600" data-id="dialog-mask" data-mask="true">权限管理</a>
+                        <a href="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Roles', 'action' => 'manage', $item->id]);?>" class="btn btn-orange" data-toggle="dialog" data-width="600" data-height="600" data-id="dialog-mask" data-mask="true">菜单权限管理</a>
+                        <a href="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Roles', 'action' => 'rules', $item->id]);?>" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="600" data-id="dialog-mask" data-mask="true">权限管理</a>
                     </td>
                 </tr>
                 <?php

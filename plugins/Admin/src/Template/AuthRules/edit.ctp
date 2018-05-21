@@ -21,7 +21,7 @@
                 <td>
                     <label class="control-label x85">上级权限：</label>
                     <select data-toggle="selectpicker" data-live-search="true" name="parent_id">
-                        <option value="">一级权限</option>
+                        <option value="0">一级权限</option>
                         <?php foreach ($parents as $key=>$item):?>
                         <option <?php if ($data['parent_id'] == $key) echo 'selected'?> value="<?php echo $key?>"><?php echo $item?></option>
                         <?php endforeach;?>

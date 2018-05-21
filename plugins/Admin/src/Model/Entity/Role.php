@@ -31,6 +31,7 @@ class Role extends Entity
         'menus' => true,
         'note' => true,
         'sort' => true,
+        'rules' => true,
         'ad_users' => true
     ];
 }

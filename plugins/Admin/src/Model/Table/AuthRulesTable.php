@@ -90,7 +90,6 @@ class AuthRulesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->isUnique(['name']));
-        $rules->add($rules->existsIn(['parent_id'], 'ParentAuthRules'));
 
         return $rules;
     }

@@ -67,7 +67,8 @@ class AuthRulesController extends AppController
    {
        $data = $this->AuthRules->get($id);
        if ($this->request->is(['patch', 'post', 'put'])) {
-           $data = $this->AuthRules->patchEntity($data, $this->request->getData());
+           $requestData = $this->request->getData();
+           $data = $this->AuthRules->patchEntity($data, $requestData);
            if ($this->AuthRules->save($data)) {
                $this->jump(200, '编辑成功!', 'authrule', true);
            } else {
@@ -79,7 +80,8 @@ class AuthRulesController extends AppController
            'valueField' => 'title'
        ])
            ->where([
-               'parent_id' => 0
+               'parent_id' => 0,
+               'id <>' => $id
            ])
            ->toArray();
 

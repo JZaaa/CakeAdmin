@@ -142,4 +142,33 @@ class RolesController extends AppController
 
         $this->set(compact('menu', 'id', 'haveMenus', 'haveMenuStr'));
     }
+
+
+    /*
+    * 管理员组的权限管理
+    *
+    * */
+    public function rules($id = null) {
+        $role = $this->Roles->get($id, [
+            'contain' => []
+        ]);
+        if ($this->request->is(array('post', 'put'))) {
+            $rules = explode(',', $this->request->getData('rules'));
+            $saveData = $this->request->getData();
+            $saveData['rules'] = json_encode($rules);
+            $role = $this->Roles->patchEntity($role, $saveData);
+            if ($this->Roles->save($role)) {
+                $this->jump(200, '保存成功!', 'roles', true);
+            } else {
+                $this->jump(300, '保存失败!', 'roles', true);
+            }
+        }
+        $rules = TableRegistry::getTableLocator()->get('Admin.AuthRules')->find()
+                ->all();          //获取所有菜单
+
+        $haveRules = (empty($role->rules)) ? array() : json_decode($role->rules);
+        $haveRuleStr = implode(',', $haveRules);
+
+        $this->set(compact('rules', 'id', 'haveRules', 'haveRuleStr'));
+    }
 }

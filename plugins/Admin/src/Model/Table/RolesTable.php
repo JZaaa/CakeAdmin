@@ -64,6 +64,10 @@ class RolesTable extends Table
             ->allowEmpty('menus');
 
         $validator
+            ->scalar('rules')
+            ->allowEmpty('menus');
+
+        $validator
             ->scalar('note')
             ->maxLength('note', 100)
             ->allowEmpty('note');
