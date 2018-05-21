@@ -12,5 +12,8 @@ composer install
 
 ### 其他配置
 
-复制 ``config/app.default.php`` 至 ``config`` 文件下，并重命名为 ``app.php`` , 修改相关配置后，服务器访问本项目即可。 
+复制 ``config/app.default.php`` 至 ``config`` 文件下，并重命名为 ``app.php`` , 修改相关配置后，服务器访问本项目即可。
+
+### 其他
+[CakePHP 3.6 action 级别权限验证组件 ](https://github.com/JZaaa/Cake-AuthRules)
 
