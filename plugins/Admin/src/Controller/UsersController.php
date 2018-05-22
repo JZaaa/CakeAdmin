@@ -19,7 +19,7 @@ class UsersController extends AppController
     {
         parent::initialize();
         $this->Auth->allow(['relogin']);
-        $this->AuthRules->allow(['login', 'relogin', 'logout']);
+        $this->AuthRule->allow(['login', 'relogin', 'logout']);
     }
 
 

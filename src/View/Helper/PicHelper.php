@@ -1,12 +1,11 @@
 <?php
 namespace App\View\Helper;
 
-use Cake\Routing\Router;
 use Cake\View\Helper;
-use Cake\View\View;
 
 /**
  * Pic helper
+ * @property \Cake\View\Helper\UrlHelper $Url
  */
 class PicHelper extends Helper
 {
@@ -17,6 +16,13 @@ class PicHelper extends Helper
      * @var array
      */
     protected $_defaultConfig = [];
+
+    /**
+     * Other helpers used by FormHelper
+     *
+     * @var array
+     */
+    public $helpers = ['Url'];
 
     /*
      * 图片路径处理 判断远程图片和本地图片
@@ -34,11 +40,7 @@ class PicHelper extends Helper
         //判断是否为远程图片
         if (!preg_match("~^(?:f|ht)tps?://~i", $image))
         {
-            if (is_file($image)) {
-                $image = Router::url('/') . $image;
-            } else {
-                return ($bool) ? false : $default;
-            }
+            return $this->Url->webroot($image);
         } else {
             //验证远程图片是否存在
             $ch = curl_init();
@@ -54,4 +56,7 @@ class PicHelper extends Helper
         }
         return $image;
     }
+
+
+
 }

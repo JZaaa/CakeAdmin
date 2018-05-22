@@ -64,7 +64,7 @@ use Cake\Http\Response;
  *           $this->AuthRules->allow()
  *
  */
-class AuthRulesComponent extends Component
+class AuthRuleComponent extends Component
 {
 
     use EventDispatcherTrait;

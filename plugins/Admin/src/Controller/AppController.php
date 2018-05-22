@@ -35,7 +35,7 @@ class AppController extends BaseController
             ]);
 
 
-            $this->loadComponent('AuthRules', [
+            $this->loadComponent('AuthRule', [
                 'authModel' => 'Admin.AuthRules',
                 'fields' => [
                     'keywords' => 'name',
@@ -45,7 +45,7 @@ class AppController extends BaseController
                 'sessionKey' => 'AuthRules',
                 'ids' => $this->Auth->user('rules'),
                 'statusCode' => 405,
-                'enable' => true
+                'enable' => false
             ]);
         } catch (\Exception $e) {
             echo '网站异常！';
