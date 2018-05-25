@@ -226,6 +226,17 @@ class ArticlesController extends AppController
             $saveData['user_id'] = $this->Auth->user('id');
             $article = $this->Articles->patchEntity($article, $saveData);
             if ($this->Articles->save($article)) {
+                $searchIndex = TableRegistry::getTableLocator()->get('Admin.SearchIndex');
+                //全文索引
+                if ($searchIndex->isEnable()) {
+                    $searchData = [
+                        'obj_type' => 'article',
+                        'obj_id' => $article->id,
+                        'title' => $article->title,
+                        'content' => $article->content
+                    ];
+                    $searchIndex->createInfo($searchData);
+                }
                 $this->jump(200, '添加成功!', '', true, '', $divid);
             } else {
                 $this->jump(300, '添加失败!', '', true);
@@ -266,6 +277,17 @@ class ArticlesController extends AppController
             $saveData = $this->Articles->changeData($saveData);
             $data = $this->Articles->patchEntity($data, $saveData);
             if ($this->Articles->save($data)) {
+                $searchIndex = TableRegistry::getTableLocator()->get('Admin.SearchIndex');
+                //全文索引
+                if ($searchIndex->isEnable()) {
+                    $searchData = [
+                        'obj_type' => 'article',
+                        'obj_id' => $data->id,
+                        'title' => $data->title,
+                        'content' => $data->content
+                    ];
+                    $searchIndex->editInfo($searchData, 'article', $data->id);
+                }
                 $this->jump(200, '编辑成功!', '', true, '', $divid);
             } else {
                 $this->jump(300, '编辑失败!', '', true);
@@ -296,8 +318,8 @@ class ArticlesController extends AppController
     {
         $this->request->allowMethod(['post', 'delete']);
         $user = $this->Articles->get($id);
-
         if ($this->Articles->delete($user)) {
+            TableRegistry::getTableLocator()->get('Admin.SearchIndex')->deleteInfo('article', $id);
             $this->jump(200, '删除成功!', '', true, '', $divid);
         } else {
             $this->jump(300, '删除失败!', '', true);

@@ -17,7 +17,7 @@
             <th width="50" align="center">序号</th>
             <th> 组名称</th>
             <th align="center">排序</th>
-            <th align="center" width="250">操作</th>
+            <th align="center" width="350">操作</th>
         </tr>
         </thead>
         <tbody>

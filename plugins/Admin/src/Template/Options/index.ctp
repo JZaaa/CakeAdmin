@@ -81,6 +81,13 @@
                     </tr>
                     <tr>
                         <td>
+                            <label class="control-label x100 text-right">全文索引：</label>
+                            <input type="radio" name="systemfulltext" id="systemfulltext1" data-toggle="icheck" value="1" data-rule="checked" <?php if (isset($data['systemfulltext']) && $data['systemfulltext'] == 1) {echo 'checked';}?> data-label="&nbsp;开启">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" name="systemfulltext" id="systemfulltext2" data-toggle="icheck" value="2" <?php if (!isset($data['systemfulltext']) || $data['systemfulltext'] == 2) {echo 'checked';}?> data-label="&nbsp;不开启">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <label class="control-label x100 text-right">&nbsp;</label>
                             <button type="submit" class="btn btn-primary btn-save">保存</button>
                         </td>

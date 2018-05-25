@@ -66,11 +66,11 @@ CREATE TABLE `ad_articles` (
   `modified` datetime DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`),
   KEY `created` (`created`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='文章表';
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COMMENT='文章表';
 
 /*Data for the table `ad_articles` */
 
-insert  into `ad_articles`(`id`,`arctype_id`,`title`,`shorttitle`,`color`,`description`,`keywords`,`content`,`pubdate`,`image`,`autoimage`,`tag`,`isshow`,`istop`,`user_id`,`url`,`created`,`modified`) values (1,2,'幻灯片1','sdf','#891b1b','bbbbbbbbbb','aaaaaa','<p>\r\n	<img src=\"/github/cakecms-2.0/webroot/assets/b-jui/BJUI/plugins/kindeditor/attached/image/20180517/20180517044357_60705.png\" alt=\"\" />\r\n</p>\r\n<p>\r\n	dsfsdf\r\n</p>','2018-05-17 10:42:10','assets/b-jui/BJUI/plugins/kindeditor/attached/image/20180517/20180517044357_60705.png',1,NULL,2,1,1,'df','2018-05-17 10:44:04','2018-05-17 10:44:04'),(4,3,'新闻12','12','#42821c','','','','2018-05-17 13:39:59','',2,NULL,1,1,1,NULL,'2018-05-17 13:40:10','2018-05-17 13:46:56'),(3,2,'sdf1','','','','','','2018-05-17 11:41:42','files/20180517/ebu2p72s.png',2,NULL,1,2,1,'','2018-05-17 11:41:49','2018-05-17 11:50:44'),(8,4,'关于我们123213',NULL,NULL,'','123123','','2018-05-17 14:25:39',NULL,2,NULL,1,2,1,NULL,'2018-05-17 14:25:44','2018-05-17 14:25:47');
+insert  into `ad_articles`(`id`,`arctype_id`,`title`,`shorttitle`,`color`,`description`,`keywords`,`content`,`pubdate`,`image`,`autoimage`,`tag`,`isshow`,`istop`,`user_id`,`url`,`created`,`modified`) values (1,2,'幻灯片1','sdf','#891b1b','bbbbbbbbbb','aaaaaa','<p>\r\n	<img src=\"/github/cakecms-2.0/webroot/assets/b-jui/BJUI/plugins/kindeditor/attached/image/20180517/20180517044357_60705.png\" alt=\"\" />\r\n</p>\r\n<p>\r\n	dsfsdf\r\n</p>','2018-05-17 10:42:10','assets/b-jui/BJUI/plugins/kindeditor/attached/image/20180517/20180517044357_60705.png',1,NULL,2,1,1,'df','2018-05-17 10:44:04','2018-05-17 10:44:04'),(4,3,'新闻12','12','#42821c','','','','2018-05-17 13:39:59','files/20180522/vi127di3.png',2,NULL,1,1,1,NULL,'2018-05-17 13:40:10','2018-05-22 14:43:29'),(3,2,'sdf1','','','','','','2018-05-17 11:41:42','files/20180517/ebu2p72s.png',2,NULL,1,2,1,'','2018-05-17 11:41:49','2018-05-17 11:50:44'),(8,4,'关于我们123213',NULL,NULL,'','123123','','2018-05-17 14:25:39',NULL,2,NULL,1,2,1,NULL,'2018-05-17 14:25:44','2018-05-17 14:25:47');
 
 /*Table structure for table `ad_auth_rules` */
 
@@ -84,11 +84,11 @@ CREATE TABLE `ad_auth_rules` (
   `condition` varchar(100) DEFAULT NULL COMMENT '规则表达式',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8 COMMENT='规则表';
 
 /*Data for the table `ad_auth_rules` */
 
-insert  into `ad_auth_rules`(`id`,`parent_id`,`name`,`title`,`condition`) values (1,0,'admin/articles/listPageMain','文章管理',NULL),(2,0,'admin/articles/onePageMain','单页管理',NULL),(3,1,'admin/articles/picPageManage','图片列表管理',NULL),(4,1,'admin/articles/listPageManage','文章列表关联',NULL),(5,2,'admin/articles/onePageManage','单页面内容管理',NULL),(6,1,'admin/articles/add','添加',NULL),(7,1,'admin/articles/delete','删除',NULL),(8,1,'admin/articles/edit','编辑',NULL),(9,0,'admin/arctypes/index','栏目管理',NULL),(10,9,'admin/arctypes/add','新增',NULL),(11,9,'admin/arctypes/edit','编辑',NULL),(12,9,'admin/arctypes/delete','删除',NULL),(13,0,'admin/roles/index','管理员组',NULL),(14,13,'admin/roles/add','新增',NULL),(15,13,'admin/roles/edit','编辑',NULL),(16,13,'admin/roles/delete','删除',NULL),(17,13,'admin/roles/manage','菜单权限管理',NULL),(18,0,'admin/users/index','用户管理',NULL),(19,18,'admin/users/add','添加',NULL),(20,18,'admin/users/edit','编辑',NULL),(21,18,'admin/users/delete','删除',NULL),(22,0,'admin/options/index','系统设置',NULL),(23,0,'admin/menus/index','菜单管理',NULL),(24,23,'admin/menus/add','新增',NULL),(25,23,'admin/menus/edit','编辑',NULL),(26,23,'admin/menus/delete','删除',NULL),(27,0,'admin/authRoles/index','权限管理',NULL),(28,27,'admin/authRoles/add','新增',NULL),(29,27,'admin/authRoles/edit','编辑',NULL),(30,27,'admin/authRoles/delete','删除',NULL);
+insert  into `ad_auth_rules`(`id`,`parent_id`,`name`,`title`,`condition`) values (1,0,'admin/articles/listPageMain','文章管理',NULL),(2,0,'admin/articles/onePageMain','单页管理',NULL),(3,1,'admin/articles/picPageManage','图片列表管理',NULL),(4,1,'admin/articles/listPageManage','文章列表关联',NULL),(5,2,'admin/articles/onePageManage','单页面内容管理',NULL),(6,1,'admin/articles/add','添加',NULL),(7,1,'admin/articles/delete','删除',NULL),(8,1,'admin/articles/edit','编辑',NULL),(9,0,'admin/arctypes/index','栏目管理',NULL),(10,9,'admin/arctypes/add','新增',NULL),(11,9,'admin/arctypes/edit','编辑',NULL),(12,9,'admin/arctypes/delete','删除',NULL),(13,0,'admin/roles/index','管理员组',NULL),(14,13,'admin/roles/add','新增',NULL),(15,13,'admin/roles/edit','编辑',NULL),(16,13,'admin/roles/delete','删除',NULL),(17,13,'admin/roles/manage','菜单权限管理',NULL),(18,0,'admin/users/index','用户管理',NULL),(19,18,'admin/users/add','添加',NULL),(20,18,'admin/users/edit','编辑',NULL),(21,18,'admin/users/delete','删除',NULL),(22,0,'admin/options/index','系统设置',NULL),(23,0,'admin/menus/index','菜单管理',NULL),(24,23,'admin/menus/add','新增',NULL),(25,23,'admin/menus/edit','编辑',NULL),(26,23,'admin/menus/delete','删除',NULL),(27,0,'admin/authRoles/index','权限管理',NULL),(28,27,'admin/authRoles/add','新增',NULL),(29,27,'admin/authRoles/edit','编辑',NULL),(30,27,'admin/authRoles/delete','删除',NULL),(31,0,'admin/upload/fileupload','图片上传',NULL),(32,31,'admin/upload/comm','公共方法',NULL);
 
 /*Table structure for table `ad_menus` */
 
@@ -126,11 +126,11 @@ CREATE TABLE `ad_options` (
   `type` varchar(50) DEFAULT NULL COMMENT '所属分类',
   `autoload` varchar(20) DEFAULT 'yes' COMMENT '是否自动加载，缓存起来',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='系统配置表';
 
 /*Data for the table `ad_options` */
 
-insert  into `ad_options`(`id`,`name`,`field`,`value`,`type`,`autoload`) values (1,'系统名称','systemname','CakeCMS管理系统','system','yes'),(2,'系统logo','systemlogo','img/cake-logo.png','system','yes'),(3,'显示系统名称','systemnamehide','1','system','yes'),(4,'起始年份','systemyear','2018','system','yes'),(5,'底部信息','systemfoot','Copyright © 2018 CakeCMS','system','yes'),(6,'百度地图','baidu','','other','yes'),(7,'云片短信','yunpian','','other','yes'),(8,'站点名称','sitename','','site','yes'),(9,'站点副名称','sitefuname','','site','yes'),(10,'站点描述','sitedesc','','site','yes'),(11,'关键词','sitekeywords','','site','yes'),(12,'版权信息','sitecopyright','','site','yes'),(13,'备案编号','siteicpsn','','site','yes'),(14,'统计代码','sitestatistics','','site','yes'),(15,'登录名称','systemlogin','CakeCMS管理系统','system','yes');
+insert  into `ad_options`(`id`,`name`,`field`,`value`,`type`,`autoload`) values (1,'系统名称','systemname','CakeCMS管理系统','system','yes'),(2,'系统logo','systemlogo','img/cake-logo.png','system','yes'),(3,'显示系统名称','systemnamehide','1','system','yes'),(4,'起始年份','systemyear','2018','system','yes'),(5,'底部信息','systemfoot','Copyright © 2018 CakeCMS','system','yes'),(6,'百度地图','baidu','','other','yes'),(7,'云片短信','yunpian','','other','yes'),(8,'站点名称','sitename','','site','yes'),(9,'站点副名称','sitefuname','','site','yes'),(10,'站点描述','sitedesc','','site','yes'),(11,'关键词','sitekeywords','','site','yes'),(12,'版权信息','sitecopyright','','site','yes'),(13,'备案编号','siteicpsn','','site','yes'),(14,'统计代码','sitestatistics','','site','yes'),(15,'登录名称','systemlogin','CakeCMS管理系统','system','yes'),(16,NULL,'systemfulltext','1','system','yes');
 
 /*Table structure for table `ad_roles` */
 
@@ -149,6 +149,27 @@ CREATE TABLE `ad_roles` (
 /*Data for the table `ad_roles` */
 
 insert  into `ad_roles`(`id`,`name`,`menus`,`rules`,`note`,`sort`) values (1,'管理员组','[\"7\",\"8\",\"12\",\"11\",\"9\",\"1\",\"2\",\"3\",\"4\",\"5\",\"6\",\"13\"]','[\"1\",\"3\",\"4\",\"6\",\"7\",\"8\",\"2\",\"5\",\"9\",\"10\",\"11\",\"12\",\"13\",\"14\",\"15\",\"16\",\"17\",\"18\",\"19\",\"20\",\"21\",\"22\",\"23\",\"24\",\"25\",\"26\",\"27\",\"28\",\"29\",\"30\"]','',2);
+
+/*Table structure for table `ad_search_index` */
+
+DROP TABLE IF EXISTS `ad_search_index`;
+
+CREATE TABLE `ad_search_index` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `obj_type` varchar(20) NOT NULL COMMENT '模块类型',
+  `obj_id` int(11) unsigned NOT NULL COMMENT '关联id',
+  `title` text NOT NULL COMMENT '标题',
+  `content` text NOT NULL COMMENT '内容',
+  `params` text COMMENT '拓展字段',
+  `status` tinyint(2) NOT NULL DEFAULT '1' COMMENT '状态',
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `object` (`obj_type`,`obj_id`),
+  FULLTEXT KEY `content` (`title`,`content`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='全文索引';
+
+/*Data for the table `ad_search_index` */
 
 /*Table structure for table `ad_users` */
 
