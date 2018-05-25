@@ -14,6 +14,16 @@ composer install
 
 复制 ``config/app.default.php`` 至 ``config`` 文件下，并重命名为 ``app.php`` , 修改相关配置后，服务器访问本项目即可。
 
+**Linux文件夹权限**
+
+Linux系统可能会出现文件权限的问题，请给以下文件与子文件添加权限：
+````
+/logs
+/tmp
+/files
+/webroot/assets/b-jui/BJUI/plugins/kindeditor/attached
+````
+
 ### 其他
 [CakePHP 3.6 action 级别权限验证组件 ](https://github.com/JZaaa/Cake-AuthRules)
 
