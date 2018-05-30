@@ -150,8 +150,7 @@ class SearchIndexTable extends Table
             ->where($condition)
             ->bind(':search', $string, 'string')->all();
 
-        debug($query);
-        exit;
+        return $query;
     }
 
 

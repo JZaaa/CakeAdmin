@@ -1,5 +1,26 @@
+# 对 .jsgz .cssgz 直接输出
+<Files *.jsgz>
+    AddEncoding gzip .jsgz
+    ForceType application/x-javascript
+</Files>
+<Files *.cssgz>
+    AddEncoding gzip .cssgz
+    ForceType text/css
+</Files>
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+
+    #读到.css，判断如果浏览器支持gzip且.cssgz存在，就进行重导
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}gz -f
+    RewriteRule ^(.*).css $1.cssgz [L,QSA]
+
+    #读到.js，判断如果浏览器支持gzip且.jsgz存在，就进行重导
+    RewriteCond %{HTTP:Accept-encoding} gzip
+    RewriteCond %{REQUEST_FILENAME}gz -f
+    RewriteRule ^(.*).js $1.jsgz [L,QSA]
 </IfModule>

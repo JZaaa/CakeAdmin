@@ -6,7 +6,7 @@
     <title><?php if (isset($systemData['systemname'])) {echo $systemData['systemname'];}?></title>
     <link href="<?=$this->request->base?>/favicon.ico" rel="Shortcut Icon">
     <!-- bootstrap - css -->
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
     <!-- core - css -->
     <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/css/style.css" rel="stylesheet">
     <link href="<?php echo $this->request->base;?>/css/admin/welcome.css" rel="stylesheet">
@@ -39,7 +39,7 @@
     <!-- colorpicker -->
     <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
     <!-- ztree -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all-3.5.js"></script>
+    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all-3.5.min.js"></script>
     <!-- nice validate -->
     <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.js"></script>
     <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.themes.js"></script>
