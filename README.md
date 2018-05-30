@@ -1,6 +1,7 @@
 # CakePHP 3.6 + BJUI 快速开发后台模板
 
-后台默认账号： admin
+默认账号： admin
+
 密码：123456
 
 ## 开始使用
@@ -33,7 +34,10 @@ Linux系统可能会出现文件权限的问题，请给以下文件与子文件
 **2018-05-30**
 
 - 添加``js/css``资源的gzip静态压缩重定向,并添加部分资源gzip压缩。
-默认引入的``js/css``会优先读取返回同目录下同名``jsgz/cssgz`` gzip文件,不存在则读取返回原文件。想不还原默认设置则用``/webroot/.htaccess_bak``替换 ``/webroot/.htaccess``
+
+  默认引入的``js/css``会优先读取返回同目录下同名``jsgz/cssgz`` gzip文件,不存在则读取返回原文件。
+
+  还原默认设置则用``/webroot/.htaccess_bak``替换 ``/webroot/.htaccess``
 
 
 
