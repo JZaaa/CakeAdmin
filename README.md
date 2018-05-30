@@ -38,9 +38,16 @@ Linux系统可能会出现文件权限的问题，请给以下文件与子文件
   默认引入的``js/css``会优先读取返回同目录下同名``jsgz/cssgz`` gzip文件,不存在则读取返回原文件。
 
   还原默认设置则用``/webroot/.htaccess_bak``替换 ``/webroot/.htaccess``
+  
+---------------------
 
+**2018-05-25**
+
+- 新增中文全文检索模块 -- ``Admin/SearchIndexTable.php``
+
+  在[系统配置]中启用全文搜索，现在你可以使用mysql来实现基础的全文检索！
 
 
 ### 其他
-[CakePHP 3.6 action 级别权限验证组件 ](https://github.com/JZaaa/Cake-AuthRules)
+**项目中使用的部分组件/类：**[Cake-repository](https://github.com/JZaaa/Cake-repository)
 
