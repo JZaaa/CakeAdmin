@@ -35,18 +35,18 @@ class AppController extends BaseController
             ]);
 
 
-            $this->loadComponent('AuthRule', [
-                'authModel' => 'Admin.AuthRules',
-                'fields' => [
-                    'keywords' => 'name',
-                    'extend' => 'condition',
-                    'name' => 'title'
-                ],
-                'sessionKey' => 'AuthRules',
-                'ids' => $this->Auth->user('rules'),
-                'statusCode' => 405,
-                'enable' => false
-            ]);
+//            $this->loadComponent('AuthRule', [
+//                'authModel' => 'Admin.AuthRules',
+//                'fields' => [
+//                    'keywords' => 'name',
+//                    'extend' => 'condition',
+//                    'name' => 'title'
+//                ],
+//                'sessionKey' => 'AuthRules',
+//                'ids' => $this->Auth->user('rules'),
+//                'statusCode' => 405,
+//                'enable' => false
+//            ]);
         } catch (\Exception $e) {
             echo '网站异常！';
             exit;
