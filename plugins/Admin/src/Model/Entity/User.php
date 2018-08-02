@@ -1,6 +1,7 @@
 <?php
 namespace Admin\Model\Entity;
 
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\ORM\Entity;
 
 /**
@@ -16,7 +17,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $modified
  *
  * @property \Admin\Model\Entity\Role $role
- * @property \Admin\Model\Entity\AdArticle[] $ad_articles
+ * @property \Admin\Model\Entity\Article[] $ad_articles
  */
 class User extends Entity
 {
@@ -50,4 +51,13 @@ class User extends Entity
     protected $_hidden = [
         'password'
     ];
+
+
+    protected function _setPassword($password)
+    {
+        if (strlen($password) > 0) {
+            return (new DefaultPasswordHasher)->hash($password);
+        }
+    }
+
 }
