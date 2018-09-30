@@ -43,7 +43,7 @@ return [
         'namespace' => 'App',
         'encoding' => env('APP_ENCODING', 'UTF-8'),
         'defaultLocale' => env('APP_DEFAULT_LOCALE', 'en_US'),
-        'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'UTC'),
+        'defaultTimezone' => env('APP_DEFAULT_TIMEZONE', 'PRC'),
         'base' => false,
         'dir' => 'src',
         'webroot' => 'webroot',
@@ -380,6 +380,6 @@ return [
      * To use database sessions, load the SQL file located at config/schema/sessions.sql
      */
     'Session' => [
-        'defaults' => 'php',
+        'defaults' => 'cake',
     ],
 ];
