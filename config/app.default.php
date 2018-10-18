@@ -382,4 +382,23 @@ return [
     'Session' => [
         'defaults' => 'cake',
     ],
+
+    /**
+     * 跨域配置
+     * - AllowOrigin [array|bool|string]  - 设置 true/* 允许全部， 可用字符串或数组指定允许跨域地址
+     * - AllowMethods [array] - 设置允许访问类型
+     * - MaxAge [number|false] - 缓存时间, 开发请设置为false
+     * - AllowHeaders [true|array|string]
+     * - ExposeHeaders [array|string|false] - 允许访问头
+     */
+//    'Cors' => [
+//        // Accept all origins
+//        'AllowOrigin' => true,
+//
+//        'AllowMethods' => ['GET', 'POST'],
+//
+//        'MaxAge' => 86400, // 缓存一天
+//
+//        'ExposeHeaders' => ['X-Token']
+//    ]
 ];
