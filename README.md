@@ -75,6 +75,13 @@ Linux系统可能会出现文件权限的问题，请给以下文件与子文件
 
 ## 更新日志
 
+**2018-10-18**
+
+- 添加ApiController类实现Api类接口Json输出，使用方法请参考``src/Controller/ApiController.php``内说明
+- ``app.php``添加Cors跨域配置，配置请方法与参数请参考``app.php``内说明
+- 添加XSS防护
+- 修复栏目查找带回错误
+
 **2018-08-02**
 
 - 修复密码未hash化错误
