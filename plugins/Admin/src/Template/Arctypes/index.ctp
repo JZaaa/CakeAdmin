@@ -36,10 +36,10 @@
                                     $line .= "&nbsp;&nbsp;&nbsp;|---&nbsp;";
                                 }
                             }
-                            echo $line . $item->name;
+                            echo $line . h($item->name);
                             ?>
                         </td>
-                        <td><?php echo $item->keywords;?></td>
+                        <td><?php echo h($item->keywords);?></td>
                         <td align="center"><?php echo $item->level;?></td>
                         <td align="center"><?php echo $typeData[$item->type];?></td>
                         <td align="center"><?php echo $item->sort;?></td>

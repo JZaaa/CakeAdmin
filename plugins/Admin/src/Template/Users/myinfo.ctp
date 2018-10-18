@@ -6,13 +6,13 @@
             <tr>
                 <td>
                     <label class="control-label x85">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label>
-                    <input type="text" name="username" readonly value="<?php echo $data->username;?>" size="35" class="form-control input-nm">
+                    <input type="text" name="username" readonly value="<?php echo h($data->username);?>" size="35" class="form-control input-nm">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label class="control-label x85">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label>
-                    <input type="text" name="nickname" value="<?php echo $data->nickname;?>" size="35" class="form-control input-nm" >
+                    <input type="text" name="nickname" value="<?php echo h($data->nickname);?>" size="35" class="form-control input-nm" >
                 </td>
             </tr>
             </tbody>

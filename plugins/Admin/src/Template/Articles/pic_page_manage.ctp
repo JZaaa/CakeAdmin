@@ -3,7 +3,7 @@
         <input type="hidden" name="pageSize" value="<?php echo $numPerPage ?>">
         <input type="hidden" name="pageCurrent" value="1">
         <div class="bjui-searchBar">
-            <label>标题：</label><input type="text" value="<?php if (isset($title)) echo $title?>" name="title" size="10">&nbsp;
+            <label>标题：</label><input type="text" value="<?php if (isset($title)) echo h($title)?>" name="title" size="10">&nbsp;
             <button type="submit" class="btn-default" data-icon="search">查询</button>&nbsp;
             <a class="btn btn-orange" href="javascript:;" data-toggle="reloadsearch" data-clear-query="true" data-icon="undo">清空查询</a>
             <div class="pull-right">
@@ -26,7 +26,7 @@
                     <?php elseif ($item['istop'] == 1):?>
                     <span class="label label-danger">置顶</span>
                     <?php endif;?>
-                    <?php echo $item['title']?>
+                    <?php echo h($item['title'])?>
                 </p>
                 <div class="text-center">
                     <button class="btn btn-primary" data-url="<?php echo $this->Url->build(['plugin' => 'Admin', 'controller' => 'Articles', 'action' => 'edit', $item['id'], $divid]);?>" data-toggle="dialog" data-width="1000" data-height="500" data-target="roles" data-mask="true">编辑</button>

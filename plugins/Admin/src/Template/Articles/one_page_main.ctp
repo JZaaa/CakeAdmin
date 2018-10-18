@@ -15,7 +15,7 @@
     <div style="float:left; width:200px;">
         <ul id="onepagemain-tree" class="ztree" data-toggle="ztree" data-expand-all="true" data-on-click="onepagemain_layout">
             <?php foreach ($data as $item):?>
-            <li data-id="<?php echo $item['id']?>" data-href="<?php if (!empty($item['href'])) echo $this->Url->build($item['href']); else echo $this->Url->build(['plugin' => 'Admin', 'controller' => 'Articles', 'action' => 'manage', $item['id'], $item['type'], 'onepagemainbox'])?>" data-divid="#onepagemainbox" data-pid="<?php echo $item['parent_id']?>"><?php echo $item['name']?></li>
+            <li data-id="<?php echo $item['id']?>" data-href="<?php if (!empty($item['href'])) echo $this->Url->build($item['href']); else echo $this->Url->build(['plugin' => 'Admin', 'controller' => 'Articles', 'action' => 'manage', $item['id'], $item['type'], 'onepagemainbox'])?>" data-divid="#onepagemainbox" data-pid="<?php echo $item['parent_id']?>"><?php echo h($item['name'])?></li>
             <?php endforeach;?>
         </ul>
     </div>

@@ -4,14 +4,14 @@
         <input type="hidden" name="pageCurrent" value="1">
         <div class="bjui-searchBar">
             <label>用户名：</label>
-            <input type="text" value="<?php if (isset($username)) echo $username;?>" name="username" class="form-control" size="15">&nbsp;&nbsp;
+            <input type="text" value="<?php if (isset($username)) echo h($username);?>" name="username" class="form-control" size="15">&nbsp;&nbsp;
             <label>管理员组：</label>
             <select name="role_id" data-toggle="selectpicker" class="show-tick">
                 <option value="">全部</option>
                 <?php
                 foreach($roleData as $item) {
                     ?>
-                    <option value="<?php echo $item->id;?>" <?php if(isset($role_id) && $role_id == $item->id){echo "selected";} ?> ><?php echo $item->name;?></option>
+                    <option value="<?php echo $item->id;?>" <?php if(isset($role_id) && $role_id == $item->id){echo "selected";} ?> ><?php echo h($item->name);?></option>
                     <?php
                 }
                 ?>
@@ -49,9 +49,9 @@
                     ?>
                     <tr >
                         <td align="center"><?php echo $i;?></td>
-                        <td><?php echo $item->username;?></td>
-                        <td><?php echo $item->role->name?></td>
-                        <td><?php echo $item->nickname;?></td>
+                        <td><?php echo h($item->username);?></td>
+                        <td><?php echo h($item->role->name)?></td>
+                        <td><?php echo h($item->nickname);?></td>
                         <td align="center">
                             <span class="label label-<?php echo $colorData[$item->state];?>">
                             <?php echo $stateData[$item->state];?>

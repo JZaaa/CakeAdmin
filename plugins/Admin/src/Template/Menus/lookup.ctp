@@ -30,11 +30,11 @@
                                         $line .= "&nbsp;&nbsp;|---&nbsp;";
                                     }
                                 }
-                                echo $line . $item->name;
+                                echo h($line . $item->name);
                             ?>
                         </td>
                         <td align="center">
-                            <a href="javascript:;" data-toggle="lookupback" data-args="{id:'<?php echo $item->id;?>', name:'<?php echo $item->name;?>', level:'<?php echo $item->level;?>'}" class="btn btn-blue" title="选择本项" data-icon="check">选择</a>
+                            <a href="javascript:;" data-toggle="lookupback" data-args="{id:'<?php echo $item->id;?>', name:'<?php echo h($item->name);?>', level:'<?php echo $item->level;?>'}" class="btn btn-blue" title="选择本项" data-icon="check">选择</a>
                         </td>
                     </tr>
                     <?php

@@ -17,12 +17,12 @@
     }
 </style>
 <div class="bjui-pageContent preview">
-    <div class="preview-title"><?php echo $data->title;?></div>
+    <div class="preview-title"><?php echo h($data->title);?></div>
     <div class="preview-info">
         <?php
-            echo date('Y-m-d H:i:s', strtotime($data->pubdate)) . '&nbsp;&nbsp;&nbsp;&nbsp;' . $data->arctype->name;
+            echo date('Y-m-d H:i:s', strtotime($data->pubdate)) . '&nbsp;&nbsp;&nbsp;&nbsp;' . h($data->arctype->name);
         ?>
     </div>
     <hr>
-    <?php echo $data->content;?>
+    <?php echo h($data->content);?>
 </div>

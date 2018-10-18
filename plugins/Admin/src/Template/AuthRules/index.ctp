@@ -20,10 +20,10 @@
         <tbody>
         <?php foreach ($data as $item):?>
         <tr>
-            <td align="center"><span class="contextmenu" data-parent="0" data-id="<?php echo $item['id']?>"><?php echo $item['title'], '(' , $item['name'] , ')'?></span></td>
+            <td align="center"><span class="contextmenu" data-parent="0" data-id="<?php echo $item['id']?>"><?php echo h($item['title']), '(' , h($item['name']) , ')'?></span></td>
             <td>
                 <?php foreach ($item['children'] as $val):?>
-                <span class="label label-success contextmenu" data-parent="<?php echo $val['parent_id']?>" data-id="<?php echo $val['id']?>"><?php echo $val['title'], '(' , $val['name'] , ')'?></span>
+                <span class="label label-success contextmenu" data-parent="<?php echo $val['parent_id']?>" data-id="<?php echo $val['id']?>"><?php echo h($val['title']), '(' , h($val['name']) , ')'?></span>
                 <?php endforeach; ?>
             </td>
         </tr>

@@ -34,7 +34,7 @@
             <?php
                 foreach ($menu as $item) {
                     ?>
-                    <li data-id="<?php echo $item->id;?>" data-pid="<?php echo $item->parent_id;?>" <?php if(in_array($item->id, $haveMenus)){echo 'data-checked="true"';}?> ><?php echo $item->name;?></li>
+                    <li data-id="<?php echo $item->id;?>" data-pid="<?php echo $item->parent_id;?>" <?php if(in_array($item->id, $haveMenus)){echo 'data-checked="true"';}?> ><?php echo h($item->name);?></li>
                     <?php
                 }
             ?>

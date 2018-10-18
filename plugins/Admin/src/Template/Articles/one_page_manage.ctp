@@ -37,7 +37,7 @@ if (!empty($data['id'])) {
             <tr>
                 <td class="colspan-left">
                     <label class="control-label x85">标题：</label>
-                    <input type="text" name="title" value="<?php if(isset($data->title)) echo $data->title;?>" size="45" class="form-control input-nm" data-rule="required">
+                    <input type="text" name="title" value="<?php if(isset($data->title)) echo h($data->title);?>" size="45" class="form-control input-nm" data-rule="required">
                     <span style="color:#ff0000;">*</span>
                 </td>
                 <?php if ($rules['image']):?>
@@ -54,7 +54,7 @@ if (!empty($data['id'])) {
                                  data-auto="true"
                                  data-on-upload-success="navtab_pic_upload_add_article"
                                  data-icon="cloud-upload"></div>
-                            <input type="hidden" name="image" value="<?php echo $data->image;?>" id="navtab-j_input_article_pic">
+                            <input type="hidden" name="image" value="<?php echo h($data->image);?>" id="navtab-j_input_article_pic">
                         </div>
                     </td>
                 <?php endif;?>
@@ -84,7 +84,7 @@ if (!empty($data['id'])) {
                 <tr>
                     <td>
                         <label for="url" class="control-label x85">链接地址：</label>
-                        <input type="text" name="url" value="<?php if(isset($data->url)) echo $data->url?>" placeholder="http://" size="45" class="form-control input-nm" data-rule="url">
+                        <input type="text" name="url" value="<?php if(isset($data->url)) echo h($data->url)?>" placeholder="http://" size="45" class="form-control input-nm" data-rule="url">
                     </td>
                 </tr>
             <?php endif;?>
@@ -92,7 +92,7 @@ if (!empty($data['id'])) {
                 <tr>
                     <td>
                         <label class="control-label x85">短标题：</label>
-                        <input type="text" name="shorttitle" value="<?php if(isset($data->shorttitle)) echo $data->shorttitle?>" size="25" class="form-control input-nm">
+                        <input type="text" name="shorttitle" value="<?php if(isset($data->shorttitle)) echo h($data->shorttitle)?>" size="25" class="form-control input-nm">
                         <span class="distance"></span>
                     </td>
                 </tr>
@@ -107,7 +107,7 @@ if (!empty($data['id'])) {
                 <tr>
                     <td>
                         <label class="control-label x85">关键词：</label>
-                        <input type="text" name="keywords" size="45" value="<?php if(isset($data->keywords)) echo $data->keywords?>" class="form-control input-nm">
+                        <input type="text" name="keywords" size="45" value="<?php if(isset($data->keywords)) echo h($data->keywords)?>" class="form-control input-nm">
                     </td>
                 </tr>
             <?php endif;?>
@@ -115,14 +115,14 @@ if (!empty($data['id'])) {
                 <tr>
                     <td>
                         <label class="control-label x85">摘要：</label>
-                        <textarea name="description" cols="45" class="form-control" data-toggle="autoheight"><?php if(isset($data->description)) echo $data->description;?></textarea>
+                        <textarea name="description" cols="45" class="form-control" data-toggle="autoheight"><?php if(isset($data->description)) echo h($data->description);?></textarea>
                     </td>
                 </tr>
             <?php endif;?>
             <?php if ($rules['content']):?>
                 <tr>
                     <td colspan="2">
-                        <textarea name="content" data-toggle="kindeditor" style="width: 100%; min-height: 450px;"><?php if(isset($data->content)) echo $data->content;?></textarea>
+                        <textarea name="content" data-toggle="kindeditor" style="width: 100%; min-height: 450px;"><?php if(isset($data->content)) echo h($data->content);?></textarea>
                     </td>
                 </tr>
             <?php endif;?>

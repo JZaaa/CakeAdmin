@@ -27,7 +27,7 @@
                 ?>
             </select>&nbsp;&nbsp;&nbsp;&nbsp;
             <label>标题：</label>
-            <input type="text" value="<?php if (isset($title)) {echo $title;}?>" name="title" class="form-control" size="20">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" value="<?php if (isset($title)) {echo h($title);}?>" name="title" class="form-control" size="20">&nbsp;&nbsp;&nbsp;&nbsp;
             <label>发布日期：</label>
             <input type="text" value="<?php if (isset($pubdate)) { echo $pubdate;}?>" name="pubdate" data-toggle="datepicker" class="form-control" size="12">&nbsp;&nbsp;&nbsp;&nbsp;
             <label>自定义属性：</label>
@@ -104,11 +104,11 @@
                         }
                     ?>
                 </td>
-                <td align="center"><?php echo $item->arctype->name;?></td>
-                <td align="center"><?php echo $item->author;?></td>
-                <td align="center"><?php echo $item->click;?></td>
+                <td align="center"><?php echo h($item->arctype->name);?></td>
+                <td align="center"><?php echo h($item->author);?></td>
+                <td align="center"><?php echo h($item->click);?></td>
                 <td align="center"><?php echo date('Y-m-d H:i:s', strtotime($item->pubdate));?></td>
-                <td align="center"><?php echo $item->user->username;?></td>
+                <td align="center"><?php echo h($item->user->username);?></td>
                 <td align="center">
                     <span class="label label-<?php echo $colorData[$item->isshow];?>">
                         <?php echo $stateData[$item->isshow];?>

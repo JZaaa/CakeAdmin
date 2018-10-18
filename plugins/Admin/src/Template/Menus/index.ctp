@@ -37,13 +37,13 @@
                                     $line .= "&nbsp;&nbsp;&nbsp;|---&nbsp;";
                                 }
                             }
-                            echo $line . $item->name;
+                            echo h($line . $item->name);
                         ?>
                     </td>
-                    <td><?php echo $item->target;?></td>
+                    <td><?php echo h($item->target);?></td>
                     <td align="center"><?php echo $item->level;?></td>
-                    <td><?php echo $item->icon;?></td>
-                    <td><?php echo $item->reload;?></td>
+                    <td><?php echo h($item->icon);?></td>
+                    <td><?php echo h($item->reload);?></td>
                     <td align="center"><?php echo $item->sort;?></td>
                     <td align="center">
                             <span class="label label-<?php echo $colorData[$item->isshow];?>">

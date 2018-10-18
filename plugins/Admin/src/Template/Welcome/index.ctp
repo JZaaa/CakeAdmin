@@ -213,18 +213,18 @@
                     if (!empty($menuData)) {
                         foreach ($menuData as $item) {
                             ?>
-                            <li <?php if($i == 1) {echo "class=active";}?> ><a href="javascript:;" data-toggle="slidebar"><i class="fa <?php echo $item->icon;?>"></i> <?php echo $item->name;?></a>
+                            <li <?php if($i == 1) {echo "class=active";}?> ><a href="javascript:;" data-toggle="slidebar"><i class="fa <?php echo h($item->icon);?>"></i> <?php echo h($item->name);?></a>
                                 <div class="items hide" data-noinit="true">
                                     <?php
                                     if (!empty($item->child)) {
                                         foreach ($item->child as $child) {
                                             ?>
-                                            <ul class="menu-items" data-faicon="<?php echo $child['parent']->icon;?>" data-tit="<?php echo $child['parent']->name;?>">
+                                            <ul class="menu-items" data-faicon="<?php echo h($child['parent']->icon);?>" data-tit="<?php echo h($child['parent']->name);?>">
                                                 <?php
                                                 if (!empty($child['child'])) {
                                                     foreach ($child['child'] as $tmp) {
                                                         ?>
-                                                        <li><a href="<?php echo $this->request->base.'/'.$tmp->target;?>" data-reload="true" data-autorefresh="true" data-options="{id:'<?php echo $tmp->reload;?>', faicon:'<?php echo $tmp->icon;?>', fresh:true}"><?php echo $tmp->name;?></a></li>
+                                                        <li><a href="<?php echo h($this->request->base.'/'.$tmp->target);?>" data-reload="true" data-autorefresh="true" data-options="{id:'<?php echo $tmp->reload;?>', faicon:'<?php echo h($tmp->icon);?>', fresh:true}"><?php echo h($tmp->name);?></a></li>
                                                         <?php
                                                     }
                                                 }
@@ -283,7 +283,7 @@
     <footer id="bjui-footer">
         <?php
         if (isset($systemData['systemfoot'])) {
-            echo $systemData['systemfoot'];
+            echo h($systemData['systemfoot']);
         }
         ?>
     </footer>

@@ -29,7 +29,7 @@
             <tr>
                 <td class="colspan-left">
                     <label class="control-label x85">标题：</label>
-                    <input type="text" name="title" value="<?php echo $data->title;?>" size="45" class="form-control input-nm" data-rule="required">
+                    <input type="text" name="title" value="<?php echo h($data->title);?>" size="45" class="form-control input-nm" data-rule="required">
                     <span style="color:#ff0000;">*</span>
                 </td>
                 <?php if ($rules['image']):?>
@@ -46,7 +46,7 @@
                              data-auto="true"
                              data-on-upload-success="pic_upload_add_article"
                              data-icon="cloud-upload"></div>
-                        <input type="hidden" name="image" value="<?php echo $data->image;?>" id="j_input_article_pic">
+                        <input type="hidden" name="image" value="<?php echo h($data->image);?>" id="j_input_article_pic">
                     </div>
                 </td>
                 <?php endif;?>
@@ -76,7 +76,7 @@
                 <tr>
                     <td>
                         <label for="url" class="control-label x85">链接地址：</label>
-                        <input type="text" name="url" value="<?php echo $data->url?>" placeholder="http://" size="45" class="form-control input-nm" data-rule="url">
+                        <input type="text" name="url" value="<?php echo h($data->url)?>" placeholder="http://" size="45" class="form-control input-nm" data-rule="url">
                     </td>
                 </tr>
             <?php endif;?>
@@ -84,7 +84,7 @@
                 <tr>
                     <td>
                         <label class="control-label x85">短标题：</label>
-                        <input type="text" name="shorttitle" value="<?php echo $data->shorttitle?>" size="25" class="form-control input-nm">
+                        <input type="text" name="shorttitle" value="<?php echo h($data->shorttitle)?>" size="25" class="form-control input-nm">
                         <span class="distance"></span>
                     </td>
                 </tr>
@@ -99,7 +99,7 @@
                 <tr>
                     <td>
                         <label class="control-label x85">关键词：</label>
-                        <input type="text" name="keywords" size="45" value="<?php echo $data->keywords?>" class="form-control input-nm">
+                        <input type="text" name="keywords" size="45" value="<?php echo h($data->keywords)?>" class="form-control input-nm">
                     </td>
                 </tr>
             <?php endif;?>
@@ -107,14 +107,14 @@
             <tr>
                 <td>
                     <label class="control-label x85">摘要：</label>
-                    <textarea name="description" cols="45" class="form-control" data-toggle="autoheight"><?php echo $data->description;?></textarea>
+                    <textarea name="description" cols="45" class="form-control" data-toggle="autoheight"><?php echo h($data->description);?></textarea>
                 </td>
             </tr>
             <?php endif;?>
             <?php if ($rules['content']):?>
             <tr>
                 <td colspan="2">
-                    <textarea name="content" data-toggle="kindeditor" style="width: 100%; min-height: 450px;"><?php echo $data->content;?></textarea>
+                    <textarea name="content" data-toggle="kindeditor" style="width: 100%; min-height: 450px;"><?php echo h($data->content);?></textarea>
                 </td>
             </tr>
             <?php endif;?>

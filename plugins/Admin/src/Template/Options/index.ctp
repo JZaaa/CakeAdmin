@@ -35,7 +35,7 @@
                     <tr>
                         <td class="colspan-left">
                             <label class="control-label x100 text-right">系统名称：</label>
-                            <input type="text" name="systemname" value="<?php if (isset($data['systemname'])) {echo $data['systemname'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="systemname" value="<?php if (isset($data['systemname'])) {echo h($data['systemname']);}?>" size="55" class="form-control input-nm" >
                         </td>
                         <td rowspan="4" style="vertical-align: middle;">
                             <div style="display: inline-block; vertical-align: middle;">
@@ -50,7 +50,7 @@
                                      data-auto="true"
                                      data-on-upload-success="pic_upload_logo"
                                      data-icon="cloud-upload"></div>
-                                <input type="hidden" name="systemlogo" value="<?php if (isset($data['systemlogo'])) {echo $data['systemlogo'];}?>" id="j_logo_pic">
+                                <input type="hidden" name="systemlogo" value="<?php if (isset($data['systemlogo'])) {echo h($data['systemlogo']);}?>" id="j_logo_pic">
                             </div>
                         </td>
                     </tr>
@@ -64,19 +64,19 @@
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">登录名称：</label>
-                            <input type="text" name="systemlogin" value="<?php if (isset($data['systemlogin'])) {echo $data['systemlogin'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="systemlogin" value="<?php if (isset($data['systemlogin'])) {echo h($data['systemlogin']);}?>" size="55" class="form-control input-nm" >
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">起始年份：</label>
-                            <input type="text" name="systemyear" value="<?php if (isset($data['systemyear'])) {echo $data['systemyear'];}?>" size="55" class="form-control input-nm">
+                            <input type="text" name="systemyear" value="<?php if (isset($data['systemyear'])) {echo h($data['systemyear']);}?>" size="55" class="form-control input-nm">
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">底部信息：</label>
-                            <input type="text" name="systemfoot" value="<?php if (isset($data['systemfoot'])) {echo $data['systemfoot'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="systemfoot" value="<?php if (isset($data['systemfoot'])) {echo h($data['systemfoot']);}?>" size="55" class="form-control input-nm" >
                         </td>
                     </tr>
                     <tr>
@@ -103,31 +103,31 @@
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">站点名称：</label>
-                            <input type="text" name="sitename" value="<?php if (isset($data['sitename'])) {echo $data['sitename'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="sitename" value="<?php if (isset($data['sitename'])) {echo h($data['sitename']);}?>" size="55" class="form-control input-nm" >
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">站点描述：</label>
-                            <textarea name="sitedesc" cols="55" rows="5"><?php if (isset($data['sitedesc'])) {echo $data['sitedesc'];}?></textarea>
+                            <textarea name="sitedesc" cols="55" rows="5"><?php if (isset($data['sitedesc'])) {echo h($data['sitedesc']);}?></textarea>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">关键词：</label>
-                            <input type="text" name="sitekeywords" value="<?php if (isset($data['sitekeywords'])) {echo $data['sitekeywords'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="sitekeywords" value="<?php if (isset($data['sitekeywords'])) {echo h($data['sitekeywords']);}?>" size="55" class="form-control input-nm" >
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">版权信息：</label>
-                            <input type="text" name="sitecopyright" value="<?php if (isset($data['sitecopyright'])) {echo $data['sitecopyright'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="sitecopyright" value="<?php if (isset($data['sitecopyright'])) {echo h($data['sitecopyright']);}?>" size="55" class="form-control input-nm" >
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">备案编号：</label>
-                            <input type="text" name="siteicpsn" value="<?php if (isset($data['siteicpsn'])) {echo $data['siteicpsn'];}?>" size="55" class="form-control input-nm" >
+                            <input type="text" name="siteicpsn" value="<?php if (isset($data['siteicpsn'])) {echo h($data['siteicpsn']);}?>" size="55" class="form-control input-nm" >
                         </td>
                     </tr>
                     <tr>
@@ -147,14 +147,14 @@
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">百度地图：</label>
-                            <input type="text" name="baidu" value="<?php if (isset($data['baidu'])) {echo $data['baidu'];}?>" size="55" class="form-control input-nm" >&nbsp;
+                            <input type="text" name="baidu" value="<?php if (isset($data['baidu'])) {echo h($data['baidu']);}?>" size="55" class="form-control input-nm" >&nbsp;
                             <span>说明：百度地图API Key</span>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label class="control-label x100 text-right">云片短信：</label>
-                            <input type="text" name="yunpian" value="<?php if (isset($data['yunpian'])) {echo $data['yunpian'];}?>" size="55" class="form-control input-nm" >&nbsp;
+                            <input type="text" name="yunpian" value="<?php if (isset($data['yunpian'])) {echo h($data['yunpian']);}?>" size="55" class="form-control input-nm" >&nbsp;
                             <span>说明：云片短信API Key</span>
                         </td>
                     </tr>

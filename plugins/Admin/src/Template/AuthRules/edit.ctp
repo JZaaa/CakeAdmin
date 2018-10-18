@@ -6,14 +6,14 @@
             <tr>
                 <td>
                     <label for="title" class="control-label x85">名称：</label>
-                    <input type="text" name="title" value="<?php echo $data['title']?>" size="35" class="form-control input-nm" data-rule="required">
+                    <input type="text" name="title" value="<?php echo h($data['title'])?>" size="35" class="form-control input-nm" data-rule="required">
                     <span style="color:#ff0000;">*</span>
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="name" class="control-label x85">唯一标识：</label>
-                    <input type="text" name="name" size="35" class="form-control input-nm" placeholder="填写规则(非url)：plugin/controller/action，不区分大小写" value="<?php echo $data['name']?>" data-rule="required">
+                    <input type="text" name="name" size="35" class="form-control input-nm" placeholder="填写规则(非url)：plugin/controller/action，不区分大小写" value="<?php echo h($data['name'])?>" data-rule="required">
                     <span style="color:#ff0000;">*</span>
                 </td>
             </tr>

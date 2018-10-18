@@ -36,7 +36,7 @@
                     <tr>
                         <td width="70%">
                             <label for="name" class="control-label x85">栏目名称：</label>
-                            <input type="text" name="name" value="<?php echo $data->name;?>" size="35" class="form-control input-nm" data-rule="required">
+                            <input type="text" name="name" value="<?php echo h($data->name);?>" size="35" class="form-control input-nm" data-rule="required">
                             <span style="color:#ff0000;">*</span>
                         </td>
                         <td rowspan="8" style="vertical-align: middle;text-align: center">
@@ -59,7 +59,7 @@
                     <tr>
                         <td>
                             <label form="year" class="control-label x85">上级栏目：</label>
-                            <input type="text" name="parent.name" value="<?php if(empty($data->parent_arctype->name)){echo '顶级菜单';}else{echo $data->parent_arctype->name;}?>" class="form-control input-nm" data-title="查找上级栏目" size="35" data-toggle="lookup" data-url="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Arctypes', 'action' => 'lookup', $data->id]);?>" data-group="parent" data-width="760" data-height="580">
+                            <input type="text" name="parent.name" value="<?php if(empty($data->parent_arctype->name)){echo '顶级菜单';}else{echo h($data->parent_arctype->name);}?>" class="form-control input-nm" data-title="查找上级栏目" size="35" data-toggle="lookup" data-url="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Arctypes', 'action' => 'lookup', $data->id]);?>" data-group="parent" data-width="760" data-height="580">
                             <input type="hidden" name="parent.id" value="<?php if(empty($data->parent_arctype->id)){echo '0';}else{echo $data->parent_arctype->id;}?>">
                             <input type="hidden" name="parent.level" value="<?php if(empty($data->parent_arctype->level)){echo '0';}else{echo $data->parent_arctype->level;}?>">
                         </td>
@@ -69,7 +69,7 @@
                             <label class="control-label x85">属性：</label>
                             <?php $data_enable_columns = json_decode($data->enable_columns, true);
                             foreach ($enable_columns as $key=>$item):?>
-                                <input type="checkbox" value="1" id="enable_columns_<?php echo $key?>" name="columns[<?php echo $item['column']?>]" data-toggle="icheck" data-label="<?php echo $item['label']?>"
+                                <input type="checkbox" value="1" id="enable_columns_<?php echo $key?>" name="columns[<?php echo h($item['column'])?>]" data-toggle="icheck" data-label="<?php echo h($item['label'])?>"
                                     <?php if (isset($data_enable_columns[$item['column']]) && $data_enable_columns[$item['column']] == 1) echo 'checked'?>
                                 >&nbsp;
                             <?php endforeach;?>
@@ -106,13 +106,13 @@
                     <tr id="href">
                         <td>
                             <label for="name" class="control-label x85">模块链接：</label>
-                            <input type="text" name="href" placeholder="" value="<?php echo $data->href;?>" id="input-href" size="35" class="form-control input-nm">
+                            <input type="text" name="href" placeholder="" value="<?php echo h($data->href);?>" id="input-href" size="35" class="form-control input-nm">
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="name" class="control-label x85">栏目描述：</label>
-                            <textarea name="description" cols="50" rows="2" size="35"><?php echo $data->description;?></textarea>
+                            <textarea name="description" cols="50" rows="2" size="35"><?php echo h($data->description);?></textarea>
                         </td>
                     </tr>
                     <tr>

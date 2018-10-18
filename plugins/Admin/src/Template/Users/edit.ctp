@@ -6,7 +6,7 @@
             <tr>
                 <td>
                     <label class="control-label x85">用&nbsp;&nbsp;户&nbsp;&nbsp;名：</label>
-                    <input type="text" name="username" value="<?php echo $data->username;?>" autocomplete="off" size="35" class="form-control input-nm" data-rule="required">
+                    <input type="text" name="username" value="<?php echo h($data->username);?>" autocomplete="off" size="35" class="form-control input-nm" data-rule="required">
                     <span style="color:#ff0000;">*</span>
                 </td>
             </tr>
@@ -19,7 +19,7 @@
             <tr>
                 <td>
                     <label class="control-label x85">昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称：</label>
-                    <input type="text" name="nickname" value="<?php echo $data->nickname;?>" size="35" class="form-control input-nm" >
+                    <input type="text" name="nickname" value="<?php echo h($data->nickname);?>" size="35" class="form-control input-nm" >
                 </td>
             </tr>
             <tr>
@@ -43,7 +43,7 @@
                         <?php
                         foreach($roleData as $item) {
                             ?>
-                            <option value="<?php echo $item->id;?>" <?php if($data->role_id == $item->id){echo "selected";}?>><?php echo $item->name;?></option>
+                            <option value="<?php echo $item->id;?>" <?php if($data->role_id == $item->id){echo "selected";}?>><?php echo h($item->name);?></option>
                             <?php
                         }
                         ?>
