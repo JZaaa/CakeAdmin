@@ -22,6 +22,7 @@
     });
 
 </script>
+<script src="<?php echo $this->Url->webroot('holder.js')?>"></script>
 <div class="bjui-pageContent tablecomm">
     <form action="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Arctypes', 'action' => 'add']);?>" class="pageForm" data-toggle="validate" data-reloadNavtab="ture" >
         <ul class="nav nav-tabs" role="tablist">
@@ -40,7 +41,7 @@
                         </td>
                         <td rowspan="7" style="vertical-align: middle;text-align: center">
                             <div style="display: inline-block; vertical-align: middle;">
-                                <i class="iconfont delpic pic-none">&#xe600;</i>
+                                <i class="fa fa-times pic-none">&#xe600;</i>
                                 <span id="j_custom_span_pic">
                                     <img id="article-pic" src="holder.js/150x150?text=栏目图片&theme=sky&size=11">
                                 </span>

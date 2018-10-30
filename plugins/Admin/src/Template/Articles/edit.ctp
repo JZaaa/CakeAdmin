@@ -5,7 +5,7 @@
         $(this).bjuiajax('ajaxDone', json);
         if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
             $('#j_input_article_pic').val(json.filename).trigger('validate');
-            $('#j_article_pic').html('<img id="pic-add-artile" src="$this->Url->webroot('')/'+ json.filename +'" />');
+            $('#j_article_pic').html('<img id="pic-add-artile" src="<?php echo $this->Url->webroot('')?>/'+ json.filename +'" />');
             $('.delpic').show();
         }
     }
@@ -20,6 +20,7 @@
         });
     });
 </script>
+<script src="<?php echo $this->Url->webroot('holder.js')?>"></script>
 <div class="bjui-pageContent tablecomm">
     <form action="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Articles', 'action' => 'edit', $data->id, $divid]);?>" class="pageForm" data-toggle="validate" data-reloadNavtab="ture" >
         <input name="id" type="hidden" value="<?php echo $data->id;?>">

@@ -20,17 +20,17 @@
     <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/uploadify/css/uploadify.css')?>" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lte IE 9]>
-    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/other/html5shiv.min.js"></script>
-    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/other/respond.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/other/html5shiv.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/other/respond.min.js')?>"></script>
     <![endif]-->
     <!-- jquery -->
-    <script src="<?php echo $this->Url->webroot('')?>/js/jquery-1.12.4.min.js"></script>
-    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/js/jquery.cookie.js"></script>
+    <script src="<?php echo $this->Url->webroot('/js/jquery-1.12.4.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/js/jquery.cookie.js')?>"></script>
     <!--[if lte IE 9]>
-    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/other/jquery.iframe-transport.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/other/jquery.iframe-transport.js')?>"></script>
     <![endif]-->
     <!-- BJUI.all 分模块压缩版 -->
-    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/js/bjui-all.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/js/bjui-all.js')?>"></script>
     <!-- plugins -->
     <!-- swfupload for uploadify && kindeditor -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/swfupload/swfupload.js')?>"></script>
@@ -42,7 +42,7 @@
     <!-- ztree -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all-3.5.min.js')?>"></script>
     <!-- nice validate -->
-    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.js?local=zh-CN')?>"></script>
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.themes.js')?>"></script>
     <!-- bootstrap plugins -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrap.min.js')?>"></script>
@@ -50,8 +50,6 @@
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrapSelect/defaults-zh_CN.min.js')?>"></script>
     <!-- icheck -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/icheck/icheck.min.js')?>"></script>
-    <!-- dragsort -->
-    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/dragsort/jquery.dragsort-0.5.1.min.js')?>"></script>
     <!-- other plugins -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/other/jquery.autosize.js')?>"></script>
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/uploadify/scripts/jquery.uploadify.min.js')?>"></script>
