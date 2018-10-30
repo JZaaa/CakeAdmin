@@ -13,7 +13,7 @@
     <?php
         if (isset($systemData['systemlogo']) && is_file($systemData['systemlogo'])) {
             ?>
-            <a href="<?php echo $this->request->base;?>/">
+            <a href="<?php echo $this->request->here();?>">
                 <img class="logo" src="<?php echo $this->request->base . DS . $systemData['systemlogo'];?>">
             </a>
             <?php

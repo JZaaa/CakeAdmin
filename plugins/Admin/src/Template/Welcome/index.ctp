@@ -4,64 +4,64 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php if (isset($systemData['systemname'])) {echo $systemData['systemname'];}?></title>
-    <link href="<?=$this->request->base?>/favicon.ico" rel="Shortcut Icon">
+    <link href="<?php echo $this->Url->webroot('/favicon.ico')?>" rel="Shortcut Icon">
     <!-- bootstrap - css -->
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/themes/css/bootstrap.min.css')?>" rel="stylesheet">
     <!-- core - css -->
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/css/style.css" rel="stylesheet">
-    <link href="<?php echo $this->request->base;?>/css/admin/welcome.css" rel="stylesheet">
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/blue/core.css" id="bjui-link-theme" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/themes/css/style.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/css/admin/welcome.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/themes/blue/core.css')?>" id="bjui-link-theme" rel="stylesheet">
     <!-- plug - css -->
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/kindeditor/themes/default/default.css" rel="stylesheet">
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.css" rel="stylesheet">
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/bootstrapSelect/bootstrap-select.css" rel="stylesheet">
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/themes/css/FA/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/kindeditor/themes/default/default.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/colorpicker/css/bootstrap-colorpicker.min.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrapSelect/bootstrap-select.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/themes/css/FA/css/font-awesome.min.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/uploadify/css/uploadify.css')?>" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lte IE 9]>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/other/html5shiv.min.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/other/respond.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/other/html5shiv.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/other/respond.min.js"></script>
     <![endif]-->
     <!-- jquery -->
-    <script src="<?php echo $this->request->base;?>/js/jquery-1.12.4.min.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/js/jquery.cookie.js"></script>
+    <script src="<?php echo $this->Url->webroot('')?>/js/jquery-1.12.4.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/js/jquery.cookie.js"></script>
     <!--[if lte IE 9]>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/other/jquery.iframe-transport.js"></script>
+    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/other/jquery.iframe-transport.js"></script>
     <![endif]-->
     <!-- BJUI.all 分模块压缩版 -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/js/bjui-all.js"></script>
+    <script src="<?php echo $this->Url->webroot('')?>/assets/b-jui/BJUI/js/bjui-all.js"></script>
     <!-- plugins -->
     <!-- swfupload for uploadify && kindeditor -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/swfupload/swfupload.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/swfupload/swfupload.js')?>"></script>
     <!-- kindeditor -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/kindeditor/kindeditor-all.min.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/kindeditor/lang/zh_CN.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/kindeditor/kindeditor-all.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/kindeditor/lang/zh_CN.js')?>"></script>
     <!-- colorpicker -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/colorpicker/js/bootstrap-colorpicker.min.js')?>"></script>
     <!-- ztree -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all-3.5.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all-3.5.min.js')?>"></script>
     <!-- nice validate -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.themes.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.themes.js')?>"></script>
     <!-- bootstrap plugins -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/bootstrap.min.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/bootstrapSelect/bootstrap-select.min.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/bootstrapSelect/defaults-zh_CN.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrap.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrapSelect/bootstrap-select.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrapSelect/defaults-zh_CN.min.js')?>"></script>
     <!-- icheck -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/icheck/icheck.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/icheck/icheck.min.js')?>"></script>
     <!-- dragsort -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/dragsort/jquery.dragsort-0.5.1.min.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/dragsort/jquery.dragsort-0.5.1.min.js')?>"></script>
     <!-- other plugins -->
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/other/jquery.autosize.js"></script>
-    <link href="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/uploadify/css/uploadify.css" rel="stylesheet">
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/uploadify/scripts/jquery.uploadify.min.js"></script>
-    <script src="<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/download/jquery.fileDownload.js"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/other/jquery.autosize.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/uploadify/scripts/jquery.uploadify.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/download/jquery.fileDownload.js')?>"></script>
     <!-- init -->
     <script type="text/javascript">
         $(function() {
             BJUI.init({
-                JSPATH       : '<?php echo $this->request->base;?>/assets/b-jui/BJUI/',         //[可选]框架路径
-                PLUGINPATH   : '<?php echo $this->request->base;?>/assets/b-jui/BJUI/plugins/', //[可选]插件路径
+                JSPATH       : '<?php echo $this->Url->webroot('/assets/b-jui/BJUI/')?>',         //[可选]框架路径
+                PLUGINPATH   : '<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/')?>', //[可选]插件路径
                 loginInfo    : {url:'<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Users', 'action' => 'relogin']);?>', title:'超时登录', width:500, height:350}, // 会话超时后弹出登录对话框
                 statusCode   : {ok:200, error:300, timeout:301}, //[可选]
                 ajaxTimeout  : 50000, //[可选]全局Ajax请求超时时间(毫秒)
@@ -160,7 +160,7 @@
             <button type="button" class="bjui-navbar-toggle btn-default" data-toggle="collapse" data-target="#bjui-navbar-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="bjui-navbar-logo" href="<?php echo $this->request->base;?>/">
+            <a class="bjui-navbar-logo" href="<?php echo $this->request->here()?>">
                 <?php
                 if (isset($systemData['systemlogo']) && is_file($systemData['systemlogo'])) {
                     ?>

@@ -79,13 +79,6 @@
                 <td align="center"><input type="checkbox" name="ids" data-toggle="icheck" value="<?php echo $item->id;?>"></td>
                 <td align="center"><?php echo $item->id;?></td>
                 <td>
-<!--                    --><?php
-//                        if (!empty($item->image) && $this->Pic->url($item->image, '', true)) {
-//                            ?>
-<!--                            <img  class="article-img" src="--><?php //echo $this->Pic->url($item->image);?><!--">-->
-<!--                            --><?php
-//                        }
-//                    ?>
                     <a class="article-title <?php if ($item->isred == 1) {echo 'isRed';} if ($item->isbold == 1) {echo ' isBold';}?>" href="<?php echo $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Articles', 'action' => 'edit', $item->id]);?>" data-title="编辑文章" data-toggle="navtab" data-fresh="true" data-id="editcontent" data-mask="true">
                         <?php echo ($item->isshow == 2) ? '<del>' . $item->title .'</del>' : $item->title;?>
                     </a>

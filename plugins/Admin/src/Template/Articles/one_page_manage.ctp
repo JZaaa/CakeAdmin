@@ -5,7 +5,7 @@
         $(this).bjuiajax('ajaxDone', json);
         if (json[BJUI.keys.statusCode] == BJUI.statusCode.ok) {
             $('#navtab-j_input_article_pic').val(json.filename).trigger('validate');
-            $('#navtab-j_article_pic').html('<img id="navtab-pic-add-artile" src="<?php echo $this->request->base;?>/'+ json.filename +'" />');
+            $('#navtab-j_article_pic').html('<img id="navtab-pic-add-artile" src="$this->Url->webroot('')/'+ json.filename +'" />');
             $('.navtab-delpic').show();
         }
     }
@@ -20,7 +20,6 @@
         });
     });
 </script>
-<script src="<?php echo $this->request->base;?>/assets/holder/holder.js"></script>
 <?php
 if (!empty($data['id'])) {
     $url = $this->Url->build(['plugin' => $this->request->params['plugin'], 'controller' => 'Articles', 'action' => 'edit', $data['id'], $divid]);
