@@ -228,7 +228,8 @@ class ArticlesController extends AppController
             if ($this->Articles->save($article)) {
                 $searchIndex = TableRegistry::getTableLocator()->get('Admin.SearchIndex');
                 //全文索引
-                if ($searchIndex->isEnable()) {
+                if ($searchIndex->isEnable() &&
+                    !empty($article->content)) {
                     $searchData = [
                         'obj_type' => 'article',
                         'obj_id' => $article->id,
@@ -279,7 +280,8 @@ class ArticlesController extends AppController
             if ($this->Articles->save($data)) {
                 $searchIndex = TableRegistry::getTableLocator()->get('Admin.SearchIndex');
                 //全文索引
-                if ($searchIndex->isEnable()) {
+                if ($searchIndex->isEnable() &&
+                    !empty($data->content)) {
                     $searchData = [
                         'obj_type' => 'article',
                         'obj_id' => $data->id,
