@@ -32,7 +32,7 @@
                                 $line .= "&nbsp;&nbsp;|---&nbsp;";
                             }
                         }
-                        echo h($line . $item->name);
+                        echo $line . h($item->name);
                         ?>
                     </td>
                     <td><?php echo $typeData[$item->type];?></td>

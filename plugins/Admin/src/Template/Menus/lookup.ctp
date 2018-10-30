@@ -30,7 +30,7 @@
                                         $line .= "&nbsp;&nbsp;|---&nbsp;";
                                     }
                                 }
-                                echo h($line . $item->name);
+                                echo $line . h($item->name);
                             ?>
                         </td>
                         <td align="center">

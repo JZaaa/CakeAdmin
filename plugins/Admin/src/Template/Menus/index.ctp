@@ -37,7 +37,7 @@
                                     $line .= "&nbsp;&nbsp;&nbsp;|---&nbsp;";
                                 }
                             }
-                            echo h($line . $item->name);
+                            echo $line . h($item->name);
                         ?>
                     </td>
                     <td><?php echo h($item->target);?></td>
