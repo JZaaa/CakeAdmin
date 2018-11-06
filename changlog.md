@@ -2,8 +2,20 @@
 
 **2018-10-30**
 
+#### Bug Fixes
 - 修复部分文字显示错误
 - 更新日志独立化
+- 修复内容为空时生成全文搜索问题
+
+
+#### Improvements
+- 更新``FontAwesome4.7.0`` 插件
+- 更新 ``nice-validator v1.1.4`` 插件
+- 更新 ``bootstrap v3.3.7``
+- 删除 ``dragsort`` 插件
+- 静态资源获取方式修改，支持无法开启rewrite模块时获取资源
+- 添加``CakeDC Intl Plugin``，用于某些情况下无法开启Intl拓展。[使用方法](https://github.com/JZaaa/Cake-repository/blob/master/document/Intl.md)
+- 添加``robots.txt``文件
 
 ---------------------
 
