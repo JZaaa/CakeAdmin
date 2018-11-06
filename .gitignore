@@ -6,7 +6,7 @@
 /tmp/*
 /vendor/*
 /webroot/files/*
-/tmp/cache/*
+/tmp/cache/myapp_cake_routes_route_collection
 composer.lock
 
 # OS generated files #
