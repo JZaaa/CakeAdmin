@@ -385,20 +385,24 @@ return [
 
     /**
      * 跨域配置
+     *
+     * composer require ozee31/cakephp-cors
+     * bin/cake plugin load Cors --bootstrap
+     *
      * - AllowOrigin [array|bool|string]  - 设置 true/* 允许全部， 可用字符串或数组指定允许跨域地址
      * - AllowMethods [array] - 设置允许访问类型
      * - MaxAge [number|false] - 缓存时间, 开发请设置为false
      * - AllowHeaders [true|array|string]
      * - ExposeHeaders [array|string|false] - 允许访问头
      */
-//    'Cors' => [
-//        // Accept all origins
-//        'AllowOrigin' => true,
-//
-//        'AllowMethods' => ['GET', 'POST'],
-//
-//        'MaxAge' => 86400, // 缓存一天
-//
-//        'ExposeHeaders' => ['X-Token']
-//    ]
+    'Cors' => [
+        // Accept all origins
+        'AllowOrigin' => true,
+
+        'AllowMethods' => ['GET', 'POST'],
+
+        'MaxAge' => 86400, // 缓存一天
+
+        'ExposeHeaders' => ['X-Token']
+    ]
 ];

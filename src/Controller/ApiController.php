@@ -47,9 +47,16 @@ class ApiController extends Controller
 
     }
 
+    public $ApiPagination = true; // 分页解析
+
 
     /**
-     * 用于api接口调用
+     * 用于api接口调用,可返回json/xml数据,默认返回json数据
+     *
+     * 标准请求请添加accept header
+     * json: application/json
+     * xml: application/xml
+     *
      * 使用方法：
      * 1.创建AppController.php 继承 当前类
      * 2.创建apiResponse函数重载此方法
@@ -83,8 +90,69 @@ class ApiController extends Controller
             header("Access-Control-Allow-Origin: {$allowOrigin}");
         }
 
-        header('Content-Type:application/json; charset=utf-8');
+        $this->_setVariable($array);
 
-        die(json_encode($array, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
+    }
+
+    /**
+     * 设置传输变量
+     * 默认返回json数据
+     * @param array $data
+     */
+    private function _setVariable($data = [])
+    {
+        if ($this->ApiPagination) {
+            $pagination = $this->_setPagination();
+            if (!empty($pagination)) {
+                $data['pagination'] = $pagination;
+            }
+        }
+
+        $accept = $this->request->getHeader('accept');
+
+        if (empty($accept) || current($accept) === '*/*') {
+            header('Content-Type:application/json; charset=utf-8');
+
+            die(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
+        }
+
+        $data['_serialize'] = array_keys($data);
+
+        $this->set($data);
+    }
+
+
+    /**
+     * 设置分页解析
+     * @return array
+     */
+    private function _setPagination()
+    {
+        $request = $this->getRequest();
+
+        if (empty($request->paging)) {
+            return [];
+        }
+
+        $paging = $request->paging;
+
+        if (count($paging) != 1) {
+            return [];
+        }
+
+        $pagination = current($paging);
+
+        return [
+            'pageCount' => $pagination['pageCount'],
+            'currentPage' => $pagination['page'],
+            'nextPage' => $pagination['nextPage'],
+            'prevPage' => $pagination['prevPage'],
+            'count' => $pagination['count'],
+            'limit' => $pagination['perPage'],
+            'paging' => $pagination,
+            'modelClass' => key($paging)
+        ];
+
+
     }
 }
