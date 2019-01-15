@@ -149,7 +149,6 @@ class ApiController extends Controller
             'prevPage' => $pagination['prevPage'],
             'count' => $pagination['count'],
             'limit' => $pagination['perPage'],
-            'paging' => $pagination,
             'modelClass' => key($paging)
         ];
 
