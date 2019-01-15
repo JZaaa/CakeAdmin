@@ -31,9 +31,7 @@ $ bin/cake migrations seed -p Admin
 ````
 
 
-
-
-**Linux文件夹权限**
+### Linux文件夹权限
 
 Linux系统可能会出现文件权限的问题，请给以下文件与子文件添加权限：
 ````
@@ -42,6 +40,64 @@ Linux系统可能会出现文件权限的问题，请给以下文件与子文件
 /files
 /webroot/assets/b-jui/BJUI/plugins/kindeditor/attached
 ````
+
+## [更新日志](./changlog.md)
+
+
+## 拓展
+
+### 服务器无法开启Intl拓展解决方法
+````
+composer require cakedc/intl --ignore-platform-reqs
+````
+在config/requirements.php中找到并注释
+````
+if (!extension_loaded('intl')) {
+     trigger_error('You must enable the intl extension to use CakePHP.', E_USER_ERROR);
+}
+````
+
+### 跨域
+````
+composer require ozee31/cakephp-cors
+
+// 加载插件
+bin/cake plugin load Cors --bootstrap
+````
+配置
+````
+    // in app.php
+    /**
+     * 跨域配置
+     * - AllowOrigin [array|bool|string]  - 设置 true/* 允许全部， 可用字符串或数组指定允许跨域地址
+     * - AllowMethods [array] - 设置允许访问类型
+     * - MaxAge [number|false] - 缓存时间, 开发请设置为false
+     * - AllowHeaders [true|array|string]
+     * - ExposeHeaders [array|string|false] - 允许访问头
+     */
+    'Cors' => [
+        // Accept all origins
+        'AllowOrigin' => true,
+
+        'AllowMethods' => ['GET', 'POST'],
+
+        'MaxAge' => 86400, // 缓存一天
+
+        'ExposeHeaders' => ['X-Token']
+    ]
+````
+
+## Token令牌
+**[使用方法](https://www.jianshu.com/p/762679ea1ff8)**
+````
+composer require admad/cakephp-jwt-auth
+
+bin/cake plugin load ADmad/JwtAuth
+````
+
+
+
+
 
 ## 定制开发模块推荐
 
@@ -86,8 +142,6 @@ Linux系统可能会出现文件权限的问题，请给以下文件与子文件
 ```` 
 
 定义类似keywords获取函数后，再创建对应栏目与菜单,菜单内容可复制``Template/list_page_main.ctp`` 进行修改，并根据程序中自定义keywords获取内容树。如不存在特殊功能的，后台文章内容部分工作就已经完成了。
-
-## [更新日志](./changlog.md)
 
 
 ### 其他
