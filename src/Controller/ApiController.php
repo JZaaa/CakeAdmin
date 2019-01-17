@@ -108,15 +108,7 @@ class ApiController extends Controller
             }
         }
 
-        $accept = $this->request->getHeader('accept');
-
-        if (empty($accept) || current($accept) === '*/*') {
-            header('Content-Type:application/json; charset=utf-8');
-
-            die(json_encode($data, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK));
-        }
-
-        $data['_serialize'] = array_keys($data);
+        $data['_serialize'] = true;
 
         $this->set($data);
     }
