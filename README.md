@@ -41,7 +41,7 @@ Linux系统可能会出现文件权限的问题，请给以下文件与子文件
 /webroot/assets/b-jui/BJUI/plugins/kindeditor/attached
 ````
 
-## [更新日志](./changlog.md)
+## [更新日志](./CHANGELOG.md)
 
 
 ## 拓展
