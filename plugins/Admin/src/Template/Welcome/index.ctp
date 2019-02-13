@@ -15,7 +15,7 @@
     <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/kindeditor/themes/default/default.css')?>" rel="stylesheet">
     <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/colorpicker/css/bootstrap-colorpicker.min.css')?>" rel="stylesheet">
     <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.css')?>" rel="stylesheet">
-    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrapSelect/bootstrap-select.css')?>" rel="stylesheet">
+    <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/bootstrapSelect/bootstrap-select.min.css')?>" rel="stylesheet">
     <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/themes/css/FA/css/font-awesome.min.css')?>" rel="stylesheet">
     <link href="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/uploadify/css/uploadify.css')?>" rel="stylesheet">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -40,7 +40,7 @@
     <!-- colorpicker -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/colorpicker/js/bootstrap-colorpicker.min.js')?>"></script>
     <!-- ztree -->
-    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all-3.5.min.js')?>"></script>
+    <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/ztree/jquery.ztree.all.min.js')?>"></script>
     <!-- nice validate -->
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.js?local=zh-CN')?>"></script>
     <script src="<?php echo $this->Url->webroot('/assets/b-jui/BJUI/plugins/niceValidator/jquery.validator.themes.js')?>"></script>
@@ -73,7 +73,7 @@
                     overwriteHomeTab : false //[可选]当打开一个未定义id的navtab时，是否可以覆盖主navtab(我的主页)
                 },
                 debug        : true,    // [可选]调试模式 [true|false，默认false]
-                theme        : 'sky' // 若有Cookie['bjui_theme'],优先选择Cookie['bjui_theme']。皮肤[五种皮肤:default, orange, purple, blue, red, green]
+                theme        : 'material_blue' // 若有Cookie['bjui_theme'],优先选择Cookie['bjui_theme']。皮肤[皮肤:default, orange, purple, blue, red, green, material_blue]
             })
 
             // main - menu
@@ -198,6 +198,7 @@
                         <li><a href="javascript:;" class="theme_purple" data-toggle="theme" data-theme="purple">&nbsp;<i class="fa fa-tree"></i> 紫罗兰</a></li>
                         <li class="active"><a href="javascript:;" class="theme_blue" data-toggle="theme" data-theme="blue">&nbsp;<i class="fa fa-tree"></i> 天空蓝</a></li>
                         <li><a href="javascript:;" class="theme_green" data-toggle="theme" data-theme="green">&nbsp;<i class="fa fa-tree"></i> 绿草如茵</a></li>
+                        <li><a href="javascript:;" class="theme_material_blue" data-toggle="theme" data-theme="material_blue">&nbsp;<i class="fa fa-tree"></i> Material-Blue</a></li>
                     </ul>
                 </li>
             </ul>

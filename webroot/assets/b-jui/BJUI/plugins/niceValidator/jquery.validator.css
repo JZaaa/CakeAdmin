@@ -268,10 +268,8 @@
   color: #f8fdff;
 }
 
-/**
- * add
- */
-.n-red .msg-wrap{position:absolute;z-index:1;padding:4px 6px 3px;font-size:12px;border:1px solid transparent;background-color:#fff6f6;border-color:#ff6464;color:#ff2929;box-shadow:0 1px 3px #ccc;border-radius:2px;}
+/* nice-validator */
+.n-red .msg-wrap{position:absolute;z-index:1;padding:4px 6px 0;font-size:12px;border:1px solid #ff6464;background-color:#fff6f6;color:#ff2929;box-shadow:0 1px 3px #ccc;border-radius:2px;}
 .n-red .msg-wrap .n-arrow b{color:#ff6464;text-shadow:0 0 2px #ccc}
 .n-red .msg-wrap .n-arrow i{color:#ffecec;}
 .n-red .msg-wrap .n-icon{background-image:url("images/validator_simple.png")}
@@ -287,4 +285,3 @@
 .n-red .n-tip .n-arrow b,.n-red .n-ok .n-arrow b,.n-red .n-loading .n-arrow b{color:#ddd;text-shadow:0 0 2px #ccc}
 .n-red .n-tip .n-arrow i,.n-red .n-ok .n-arrow i,.n-red .n-loading .n-arrow i{color:#f8fdff}
 .n-red .n-tip .n-icon{display:none}
-.n-msg {vertical-align: middle;}
