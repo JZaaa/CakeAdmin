@@ -96,9 +96,6 @@
 .bjui-upload > .queue > .item {
     display: none;
 }
-#pagerForm {
-    border-bottom: 1px #ccc solid;
-}
 .tabnoboder .tab-content{
     border-style: none;
 }
